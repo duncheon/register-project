@@ -11,7 +11,9 @@ userRouter.post('/', async (req, res) => {
   const body = req.body;
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(body.password, salt);
-
+  if (!body.username || !body.password) {
+    return res.json(400).send({ error: 'username or password is missing' });
+  }
   const newUser = {
     username: body.username,
     fullname: body.fullname,
