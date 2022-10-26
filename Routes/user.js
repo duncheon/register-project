@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const saltRound = 10;
 
 userRouter.get('/', (req, res) => {
-  res.json(data.user);
+  return res.json(data.user);
 });
 
 userRouter.post('/', async (req, res) => {
@@ -28,7 +28,7 @@ userRouter.post('/', async (req, res) => {
 
   data.user = [...data.user, { ...newUser }];
   //delete newUser.password;
-  res.json(body);
+  return res.json(body);
 });
 
 module.exports = userRouter;
