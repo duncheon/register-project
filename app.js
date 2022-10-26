@@ -6,6 +6,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use('/', (req, res) => {
+  res.json('Welcome to VTV server');
+});
 app.use('/api/users', userRouter);
 
 app.use(middlewares.unknownEndpoint);
