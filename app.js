@@ -1,6 +1,6 @@
 const userRouter = require('./Routes/user');
 const middlewares = require('./middlewares/middlewares');
-const cors = require('cors');
+//const cors = require('cors');
 const express = require('express');
 const app = express();
 app.use(cors());
